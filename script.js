@@ -69,14 +69,3 @@ slider.oninput = function() {
     container.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${input}, 1fr)`;
     }
-
-/*
-let input = prompt('Select your grid size (Max: 100)')
-    if (input > 100 || input < 1) {
-        alert('Please enter a number from 1 to 100');
-    } else {
-        resolution(input);
-        container.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${input}, 1fr)`;
-    }
-*/
