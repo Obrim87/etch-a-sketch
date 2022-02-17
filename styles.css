@@ -6,6 +6,7 @@ body, html {
     margin: 0;
     padding: 0;
     text-align: center;
+    background: grey;
 }
 
 h1 {
@@ -13,15 +14,15 @@ h1 {
 }
   
 .div {
-    background: grey;
+    background: white;
     width: 100%;
     height: 100%;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
     margin: auto;
     width: 800px;
     height: 700px;
