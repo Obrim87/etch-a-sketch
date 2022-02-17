@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+    </style>
     <link rel="stylesheet" href="styles.css">
     <title>Javascript: Etch-a-Sketch</title>
 </head>
 <body>
-    <h1>Welcome to my Etch-a-Sketch page!</h1>
-    <button class='resetBtn'>Reset</button><br><br>
+
+    <h1>Etch-a-Sketch</h1>
     <div class='container'></div>
+    <br><br>
+    <button class='classicBtn'>Classic Mode</button>
+    <button class='randomBtn'>Random Mode</button>
+    <button class='clearBtn'>Clear</button>
+    <br><br>
+    <div class='slideContainer'>
+        <p>Adjust grid size</p>
+        <input type='range' min='1' max='100' value='100' class='slider'>
+        <p class='sliderValue'></p>
+    </div>
 
     <script src='script.js'></script>
 </body>

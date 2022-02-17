@@ -3,6 +3,7 @@
 }
 
 body, html {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -11,6 +12,8 @@ body, html {
 
 h1 {
     text-align: center;
+    color: white;
+    font-size: 50px;
 }
   
 .div {
@@ -26,4 +29,61 @@ h1 {
     margin: auto;
     width: 800px;
     height: 700px;
+    box-shadow: 1px 1px 3px black;
+
+}
+
+.clearBtn, .randomBtn  {
+    background: rgba(0,0,0,0.0);
+    border: solid 1px white;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+}
+
+.classicBtn {
+    background: rgba(0,0,0,0.0);
+    border: solid 3px white;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    
+}
+
+.clearBtn:hover, .classicBtn:hover {
+    background: white;
+    color: grey;
+    cursor: pointer;
+}
+
+.randomBtn:hover {
+    cursor: pointer;
+}
+
+.slideContainer p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.slider {
+    appearance: none;
+    background-color: lightgrey;
+    border-radius: 10px;
+    width: 300px;
+    height: 20px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }

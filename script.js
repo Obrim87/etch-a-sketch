@@ -13,12 +13,6 @@ function random_rgba() {
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
 
-function gradualRgba(x) {
-    x += 0.1;
-    y = x;
-    return x;
-}
-
 function resolution(input) { 
     for (i = 0; i < input; i++) {
         let div = document.createElement('div');
@@ -28,27 +22,56 @@ function resolution(input) {
 }
 
 let container = document.querySelector('.container');
-let reset = document.querySelector('.resetBtn');
-let y = 0;
-let divOpacity = 0;
+let clear = document.querySelector('.clearBtn');
+let classic = document.querySelector('.classicBtn');
+let random = document.querySelector('.randomBtn');
+let sliderValue = document.querySelector('.sliderValue');
+let slider = document.querySelector('.slider');
 
 resolution(10000);
 
 let div = document.querySelectorAll('.div');
 
 for (let element of div) {
-    element.addEventListener('mouseenter', () => {
-        element.style.background = 'black';
-        element.style.opacity = divOpacity;
-        divOpacity += 0.1;
-    });
-    //element.style.background = 'rgba(0,0,0,' + gradualRgba(y) + ')');
+    element.addEventListener('mouseenter', () => element.style.background = 'black');
 }
 
-reset.addEventListener('click', () => {
-    divOpacity = 0;
+clear.addEventListener('click', () => {
     div.forEach(clearBlocks => clearBlocks.style.background = 'white');
-    let input = prompt('How many squares per side? (Max: 100)')
+})
+
+random.addEventListener('click', () => {
+    random.style.border = 'solid 3px white';
+    classic.style.border = 'solid 1px white';
+    for (let element of div) {
+        element.addEventListener('mouseenter', () => element.style.background = getRandomRgb());
+    }
+})
+
+random.addEventListener('mouseenter', () => random.style.background = getRandomRgb());
+
+random.addEventListener('mouseleave', () => random.style.background = 'grey');
+
+classic.addEventListener('click', () => {
+    random.style.border = 'solid 1px white';
+    classic.style.border = 'solid 3px white';
+    for (let element of div) {
+        element.addEventListener('mouseenter', () => element.style.background = 'black');
+    }
+})
+
+sliderValue.textContent = `${slider.value} x ${slider.value}`;
+
+slider.oninput = function() {
+    sliderValue.textContent = `${this.value} x ${this.value}`;
+    let input = this.value
+    resolution(input);
+    container.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+    }
+
+/*
+let input = prompt('Select your grid size (Max: 100)')
     if (input > 100 || input < 1) {
         alert('Please enter a number from 1 to 100');
     } else {
@@ -56,4 +79,4 @@ reset.addEventListener('click', () => {
         container.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${input}, 1fr)`;
     }
-})
+*/
