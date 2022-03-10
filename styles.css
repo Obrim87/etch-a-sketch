@@ -64,6 +64,11 @@ h1 {
     cursor: pointer;
 }
 
+label {
+    color: white;
+    font-size: 20px;
+}
+
 .slideContainer p {
     font-family: 'Poppins', sans-serif;
     color: white;

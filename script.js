@@ -27,13 +27,15 @@ let classic = document.querySelector('.classicBtn');
 let random = document.querySelector('.randomBtn');
 let sliderValue = document.querySelector('.sliderValue');
 let slider = document.querySelector('.slider');
+let colorPicker = document.querySelector('#colorPicker');
+console.log(colorPicker.value);
 
 resolution(10000);
 
 let div = document.querySelectorAll('.div');
 
 for (let element of div) {
-    element.addEventListener('mouseenter', () => element.style.background = 'black');
+    element.addEventListener('mouseenter', () => element.style.background = colorPicker.value);
 }
 
 clear.addEventListener('click', () => {
@@ -56,7 +58,7 @@ classic.addEventListener('click', () => {
     random.style.border = 'solid 1px white';
     classic.style.border = 'solid 3px white';
     for (let element of div) {
-        element.addEventListener('mouseenter', () => element.style.background = 'black');
+        element.addEventListener('mouseenter', () => element.style.background = colorPicker.value);
     }
 })
 
